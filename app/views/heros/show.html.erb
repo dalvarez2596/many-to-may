@@ -1,0 +1,15 @@
+<h1>Hero Details</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @hero.name %>
+</p>
+<p>
+  <strong>Quote:</strong>
+  <%= @hero.quote %>
+</p>
+<%= link_to 'Edit Hero', edit_hero_path(@hero) %> |
+<%= link_to 'Back to Heroes', heros_path %> |
+<%= link_to 'Delete Hero', hero_path(@hero), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+}%>

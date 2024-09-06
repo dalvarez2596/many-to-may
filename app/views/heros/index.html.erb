@@ -1,0 +1,9 @@
+<h1>Heros</h1>
+<ul>
+  <% @heros.each do |hero|%>
+    <li>
+      <%= link_to "#{ hero.name }, #{hero.quote} ", hero %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Add New Hero', new_hero_path %>

@@ -1,0 +1,20 @@
+<%= form_with model: player do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% player.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :team %><br>
+    <%= form.text_area :team %><br>
+    <% player.errors.full_messages_for(:team).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+  <li><%= link_to "Back to Players", players_path %></li>
+<% end %>

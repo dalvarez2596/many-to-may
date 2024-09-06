@@ -1,0 +1,20 @@
+<%= form_with model: hero do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% hero.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :quote %><br>
+    <%= form.text_area :quote %><br>
+    <% hero.errors.full_messages_for(:quote).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+  <li><%= link_to "Back to Heros", heros_path %></li>
+<% end %>
