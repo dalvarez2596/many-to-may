@@ -20,8 +20,8 @@ This repository is a Ruby on Rails application demonstrating the creation of a m
 1. **Clone the repository**
 
     ```sh
-    git clone https://github.com/yourusername/your-repository-name.git
-    cd your-repository-name
+    git clone git@github.com:dalvarez2596/many-to-many.git
+    cd many-to-many
     ```
 
 2. **Install dependencies**
