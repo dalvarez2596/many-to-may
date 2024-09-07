@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_06_044553) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_07_014512) do
   create_table "heros", force: :cascade do |t|
     t.string "name"
     t.string "quote"
@@ -18,13 +18,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_06_044553) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "player_heros", force: :cascade do |t|
-    t.integer "player_id"
-    t.integer "hero_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["hero_id"], name: "index_player_heros_on_hero_id"
-    t.index ["player_id"], name: "index_player_heros_on_player_id"
+  create_table "heros_players", id: false, force: :cascade do |t|
+    t.integer "player_id", null: false
+    t.integer "hero_id", null: false
+    t.index ["hero_id", "player_id"], name: "index_heros_players_on_hero_id_and_player_id"
+    t.index ["player_id", "hero_id"], name: "index_heros_players_on_player_id_and_hero_id"
   end
 
   create_table "players", force: :cascade do |t|

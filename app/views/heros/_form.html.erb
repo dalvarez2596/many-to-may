@@ -14,6 +14,10 @@
     <% end %>
   </div>
   <div>
+    <%= form.label :player_ids, 'Add players', style: 'display: block' %>
+    <%= form.select :player_ids, options_for_select(Player.all.pluck(:name, :id), hero.players.pluck(:id)), {include_hidden: false}, multiple: true %>
+  </div>
+  <div>
     <%= form.submit %>
   </div>
   <li><%= link_to "Back to Heros", heros_path %></li>

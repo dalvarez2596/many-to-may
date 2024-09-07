@@ -13,17 +13,3 @@
         turbo_method: :delete,
         turbo_confirm: "Are you sure?"
 }%>
-<h2>Add Hero to Player</h2>
-<%= form_with url: player_heros_path(@player), method: :post do |f| %>
-  <%= f.collection_select :hero_id, Hero.all, :id, :name, prompt: "Select a hero" %>
-  <%= f.submit "Add Hero" %>
-<% end %>
-<h2>Heros Associated with <%= @player.name %></h2>
-<ul>
-  <% @player.heros.each do |hero| %>
-    <li>
-      <%= hero.name %>
-      <%= button_to "Remove Hero", player_hero_path(@player, hero), method: :delete, data: { confirm: "Are you sure?" } %>
-    </li>
-  <% end %>
-</ul>

@@ -44,6 +44,6 @@ class HerosController < ApplicationController
   end
 
   def hero_params
-    params.require(:hero).permit(:name, :quote)
+    params.require(:hero).permit(:name, :quote, player_ids: [])
   end
 end
