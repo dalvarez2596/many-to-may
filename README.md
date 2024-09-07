@@ -2,6 +2,8 @@
 
 This repository is a Ruby on Rails application demonstrating the creation of a many-to-many relationship between `Player` and `Hero` models. Example data is generated using the Faker gem.
 
+![erd](https://github.com/user-attachments/assets/2febd808-7675-4779-81d5-c4038661814c)
+
 ## Features
 
 - **Faker Gem**: Used to generate fake data for development and testing purposes.
@@ -91,3 +93,7 @@ This repository is a Ruby on Rails application demonstrating the creation of a m
 
 - Ruby: 3.2.2
 - Rails: 7.2.1
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
