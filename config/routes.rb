@@ -8,9 +8,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "players#index"
-  resources :players do
-    resources :heros, only: [ :index, :create, :destroy ], controller: "player_heros"
-  end
-
+  resources :players
   resources :heros
 end

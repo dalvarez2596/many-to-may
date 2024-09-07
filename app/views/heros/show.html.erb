@@ -7,6 +7,12 @@
   <strong>Quote:</strong>
   <%= @hero.quote %>
 </p>
+<p>
+  <strong>Players:</strong> <br>
+  <% @hero.players.each do |player| %>
+    <%= link_to "#{player.name}, #{player.team}", player_path(player) %> <br>
+  <% end %>
+</p>
 <%= link_to 'Edit Hero', edit_hero_path(@hero) %> |
 <%= link_to 'Back to Heroes', heros_path %> |
 <%= link_to 'Delete Hero', hero_path(@hero), data: {
